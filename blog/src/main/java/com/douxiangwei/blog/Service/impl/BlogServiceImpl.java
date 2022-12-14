@@ -65,7 +65,7 @@ public class BlogServiceImpl implements BlogService {
 
         blog2.setCategory(category2);
         blog2.setTitle("world cup semi-final");
-        blog2.setContent("argentina vs croatia");
+        blog2.setContent("france vs morocco");
         blog2.setPublishedAt(new Date());
         blog2.setUpdatedAt(new Date());
         blog2.setTags("football");

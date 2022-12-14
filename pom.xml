@@ -10,6 +10,8 @@
     </parent>
     <groupId>com.douxiangwei</groupId>
     <artifactId>freeland</artifactId>
+    <packaging>pom</packaging>
+
     <version>0.0.1-SNAPSHOT</version>
     <name>freeland</name>
     <description>dxw project for Spring Boot</description>
