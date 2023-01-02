@@ -15,7 +15,7 @@
     <description>config project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,6 +37,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
