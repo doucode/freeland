@@ -10,20 +10,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("blog")
 public class BlogController {
 
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("/home")
+    @GetMapping("/blog/home")
     public Result<List<Blog>> getBlogs(@RequestParam("currentPage") int page,
                                        @RequestParam("pageSize") int showCount){
         return Result.ok(blogService.getBlogs(page,showCount));
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping("/blog/{id}/false")
     public Result<Blog> getBlog(@PathVariable("id") int id){
-        return Result.ok(blogService.getBlog(id));
+        Blog blog = blogService.getBlog(id);
+        if (blog == null) {
+            return Result.fail();
+        } else {
+            return Result.ok(blog);
+        }
     }
+
+//    @PostMapping("/blog")
+//    public Result<?> addBlog(@RequestBody ){
+//        blogService.addBlog();
+//        return Result.ok();
+//    }
+
 }

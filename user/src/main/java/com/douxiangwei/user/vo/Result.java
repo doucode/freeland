@@ -1,7 +1,8 @@
-package com.douxiangwei.blog.vo;
+package com.douxiangwei.user.vo;
 
 import lombok.Data;
-import static com.douxiangwei.blog.enums.StatusCodeEnum.*;
+
+import static com.douxiangwei.user.enums.StatusCodeEnum.*;
 
 @Data
 public class Result<T> {
@@ -34,11 +35,15 @@ public class Result<T> {
     }
 
     public static <T> Result<T> ok(T data, String message){
-        return restResult(true,data,SUCCESS.getCode(),SUCCESS.getDesc());
+        return restResult(true,data,SUCCESS.getCode(),message);
     }
 
     public static <T> Result<T> fail(){
         return restResult(false,null,FAIL.getCode(),FAIL.getDesc());
+    }
+
+    public static <T> Result<T> fail(T data, String message){
+        return restResult(false,data,FAIL.getCode(),message);
     }
 
     private static <T> Result<T> restResult(Boolean flag, String message) {
